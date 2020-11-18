@@ -19,17 +19,18 @@ searchBtn.addEventListener('click', function() {
                 <div class="jobs-item">
                 <h3>Nothing found</h3>
             `
-        }
+        } else {
         // Por cada item genero un div
-        for (jobs in data){
-            items.innerHTML +=`
-                <div class="jobs-item">
-                    <h3>${data[jobs].company}</h3>
-                    <p>${data[jobs].title}</p>
-                    <p>${data[jobs].type}</p>
-                    <br>
-                <div>
-                `;
+            for (jobs in data){
+                items.innerHTML +=`
+                    <div class="jobs-item">
+                        <h3>${data[jobs].company}</h3>
+                        <p>${data[jobs].title}</p>
+                        <p>${data[jobs].type}</p>
+                        <br>
+                    <div>
+                    `;
+            }
         }
     })
 })

@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F6F7FB;
+}
+.container {
+    width: 90%;
+    background-color: ;
+    padding: 2%;
+}
+.brand {
+    font-size: 20px;
+}
+.input-form {
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    background-image: url(/github-jobs-master/backgroundImg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    border: none;
+}
+.input-position {
+    width: 70%;
+    position: relative;
+}
+#description {
+    height: 45px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding-left: 3%;
+    font-size: 25px;
+}
+#description::placeholder {
+    font-size: 15px;
+}
+#searchBtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 35px;
+    width: 17%;
+    border: none;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(30, 134, 255,.8);
+    outline-style: none;
+}
+#searchBtn:hover {
+    border: solid 2px rgba(0, 0, 0, .5);
+    background-color: rgba(30, 134, 255, 1);
+
+}

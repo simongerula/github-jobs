@@ -14,6 +14,12 @@ searchBtn.addEventListener('click', function() {
     .then(data => {
         console.log(data);
         items.innerHTML = "";
+        if (data.length == 0) {
+            items.innerHTML +=`
+                <div class="jobs-item">
+                <h3>Nothing found</h3>
+            `
+        }
         // Por cada item genero un div
         for (jobs in data){
             items.innerHTML +=`

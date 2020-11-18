@@ -1,13 +1,12 @@
 let items = document.querySelector('.jobs-item');
-let description = "";
-let city = "";
-let fullTime = "full_time=false";
 let searchBtn = document.querySelector('#searchBtn');
 
 searchBtn.addEventListener('click', function() {
+    // Tomar los valores de los inputs para ponerlos en la url
     let description = "description="+document.querySelector('#description').value.replace(" ","+");
     let city = "location="+ document.querySelector('#city').value.replace(" ","+");
     let fullTime = "full_time=false";
+    // La peticion pasa por el proxy, para evitar el error de CORS
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     let url = `https://jobs.github.com/positions.json?${description}&${city}&${fullTime}`;
     fetch(proxyurl + url)
@@ -15,12 +14,15 @@ searchBtn.addEventListener('click', function() {
     .then(data => {
         console.log(data);
         items.innerHTML = "";
+        // Por cada item genero un div
         for (jobs in data){
             items.innerHTML +=`
-                <h3>${data[jobs].company}</h3>
-                <p>${data[jobs].title}</p>
-                <p>${data[jobs].type}</p>
-                <br>
+                <div class="jobs-item">
+                    <h3>${data[jobs].company}</h3>
+                    <p>${data[jobs].title}</p>
+                    <p>${data[jobs].type}</p>
+                    <br>
+                <div>
                 `;
         }
     })

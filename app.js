@@ -6,12 +6,11 @@ let searchBtn = document.querySelector('#searchBtn');
 
 searchBtn.addEventListener('click', function() {
     let description = "description="+document.querySelector('#description').value.replace(" ","+");
-    console.log(description);
     let city = "location="+ document.querySelector('#city').value.replace(" ","+");
     let fullTime = "full_time=false";
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
     let url = `https://jobs.github.com/positions.json?${description}&${city}&${fullTime}`;
-    console.log(url);
-    fetch(url)
+    fetch(proxyurl + url)
     .then(response => response.json())
     .then(data => {
         console.log(data);
@@ -24,7 +23,6 @@ searchBtn.addEventListener('click', function() {
                 <br>
                 `;
         }
-        console.log(data.length);
     })
 })
 
@@ -65,3 +63,10 @@ function outputList() {
         document.querySelector(".jobs-item").innerHTML += pageList[i] + "";
     }
 }*/
+
+/*const proxyurl = "https://cors-anywhere.herokuapp.com/";
+const url = "https://jobs.github.com/positions.json?description=python&location=new+york"; // site that doesn’t send Access-Control-*
+fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
+.then(response => response.json())
+.then(contents => console.log(contents))
+.catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))*/

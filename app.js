@@ -1,4 +1,4 @@
-let items = document.querySelector('.jobs-item');
+let items = document.querySelector('.jobs-list');
 let searchBtn = document.querySelector('#searchBtn');
 
 searchBtn.addEventListener('click', function() {

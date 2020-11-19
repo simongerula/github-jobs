@@ -10,7 +10,20 @@ document.onload = loadJobs();
 function loadJobs() {
     // Tomar los valores de los inputs para ponerlos en la url
     let description = "description="+document.querySelector('#description').value.replace(" ","+");
-    let city = "location="+ document.querySelector('#city').value.replace(" ","+");
+    // City Selector
+    let city;
+    if (document.querySelector('#locationChk').checked == true) {
+        city = "location=london";
+    } else if (document.querySelector('#locationChk1').checked == true) {
+        city = "location=paris";
+    } else if (document.querySelector('#locationChk2').checked == true) {
+        city = "location=amsterdam";
+    } else if (document.querySelector('#locationChk3').checked == true) {
+        city = "location=new+york";
+    } else {
+        city = "location="+ document.querySelector('#city').value.replace(" ","+");
+    }
+    // Full Time Only
     let fullTime = "";
     if (document.querySelector('#fullTimeChk').checked == true) {
         fullTime = "full_time=true";

@@ -90,6 +90,15 @@ hr {
     display: flex;
     flex-direction: column;
 }
+#locationChk,
+#locationChk1,
+#locationChk2,
+#locationChk3 {
+    -webkit-appearance: checkbox; /* Chrome, Safari, Opera */
+    -moz-appearance: checkbox;    /* Firefox */
+    -ms-appearance: checkbox;     /* IExplorer */
+    appearance: checkbox;
+}
 .right-side {
 }
 .jobs-item {

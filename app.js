@@ -1,7 +1,9 @@
 let items = document.querySelector('.jobs-list');
 let searchBtn = document.querySelector('#searchBtn');
 
-searchBtn.addEventListener('click', function() {
+searchBtn.addEventListener('click', loadJobs); 
+
+function loadJobs() {
     // Tomar los valores de los inputs para ponerlos en la url
     let description = "description="+document.querySelector('#description').value.replace(" ","+");
     let city = "location="+ document.querySelector('#city').value.replace(" ","+");
@@ -14,6 +16,7 @@ searchBtn.addEventListener('click', function() {
     .then(data => {
         console.log(data);
         items.innerHTML = "";
+        // Si no se encuentran trabajos lanza Notghing found
         if (data.length == 0) {
             items.innerHTML +=`
                 <div class="jobs-item">
@@ -33,7 +36,7 @@ searchBtn.addEventListener('click', function() {
             }
         }
     })
-})
+};
 
 
 /*console.log(list);

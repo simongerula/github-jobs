@@ -11,8 +11,7 @@ body {
     background-color: #F6F7FB;
 }
 .container {
-    width: 90%;
-    background-color: ;
+    width: 95%;
     padding: 2%;
 }
 .brand {
@@ -41,17 +40,17 @@ body {
     border: none;
     border-radius: 5px;
     padding-left: 3%;
-    font-size: 25px;
+    font-size: 16px;
 }
 #description::placeholder {
-    font-size: 15px;
+    font-size: 12px;
 }
 #searchBtn {
     position: absolute;
     top: 5px;
     right: 5px;
     height: 35px;
-    width: 17%;
+    width: 130px;
     border: none;
     border-radius: 5px;
     color: rgb(255, 255, 255);

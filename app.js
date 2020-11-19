@@ -3,6 +3,10 @@ let searchBtn = document.querySelector('#searchBtn');
 
 searchBtn.addEventListener('click', loadJobs); 
 
+
+document.onload = loadJobs();
+
+
 function loadJobs() {
     // Tomar los valores de los inputs para ponerlos en la url
     let description = "description="+document.querySelector('#description').value.replace(" ","+");

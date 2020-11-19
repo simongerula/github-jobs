@@ -20,22 +20,26 @@
                 </div>
             </div>
         </div>
-        <div class="left-menu">
-            <label for="fullTime">Full-Time
-                <input type="checkbox" name="fullTime" id="fullTime">
-            </label>
-            <input type="text" name="city" id="city" placeholder="City">
-            <br>
-        </div>
-        <div class="jobs-list">
-
-        </div>
-        <div class="page-control">
-            <input type="button" id="first" value="first">
-            <input type="button" id="previous" value="previous">
-            <input type="button" id="next" value="next">
-            <input type="button" id="last" value="last">
-        </div>
+        <main class="main">
+            <div class="left-menu">
+                <label for="fullTimeChk">
+                    <input type="checkbox" name="fullTime" id="fullTimeChk">
+                    Full Time</label>
+                    <p class="location-label">Location</p>
+                    <input type="text" name="city" id="city" placeholder="City,state,zip code or country">
+                <br>
+            </div>
+            <div class="right-side">
+                <div class="jobs-list">
+                </div>
+                <div class="page-control">
+                    <input type="button" id="first" value="first">
+                    <input type="button" id="previous" value="previous">
+                    <input type="button" id="next" value="next">
+                    <input type="button" id="last" value="last">
+                </div>
+            </div>
+        </main>
     </div>
     <script src="app.js"></script>
 </body>

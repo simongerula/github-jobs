@@ -7,7 +7,12 @@ function loadJobs() {
     // Tomar los valores de los inputs para ponerlos en la url
     let description = "description="+document.querySelector('#description').value.replace(" ","+");
     let city = "location="+ document.querySelector('#city').value.replace(" ","+");
-    let fullTime = "full_time=false";
+    let fullTime = "";
+    if (document.querySelector('#fullTimeChk').checked == true) {
+        fullTime = "full_time=true";
+    } else {
+        fullTime = "full_time=false";
+    };
     // La peticion pasa por el proxy, para evitar el error de CORS
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     let url = `https://jobs.github.com/positions.json?${description}&${city}&${fullTime}`;

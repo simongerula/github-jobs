@@ -5,6 +5,11 @@ let dataJobs;
 let description;
 let city;
 let fullTime;
+// VARIABLES CONTROL DE PAGINAS
+let pageJobs = new Array();
+let currentPage = 1;
+let jobsPerPage = 5;
+let numberOfPages;
 
 searchBtn.addEventListener('click', loadJobs); 
 //document.onload = loadJobs();
@@ -41,11 +46,12 @@ function loadJobs() {
     .then(response => response.json())
     .then(data => {
         dataJobs = data;
-        printJobs();
+        numberOfPages = (Math.ceil(dataJobs / JobsPerPage));
+        createPage();
     });
 
 };
-
+/*
 // FUNCION ENCARGADA DE IMPRIMIR LOS TRABAJOS
 function printJobs() {
     // VARIABLES CONTROLADORAS DE PAGINA
@@ -83,5 +89,49 @@ function printJobs() {
             </div>
                 `;
         }
+    }
+}*/
+
+
+
+
+document.querySelector('#nextBtn').addEventListener('click', nextPage);
+function nextPage() {
+    currentPage += 1;
+    createPage();
+}
+function previousPage() {
+    currentPage -= 1;
+}
+function firstPage() {
+    currentPage = 1;
+}
+function lastPage() {
+    currentPage = numberOfPages;
+}
+
+
+function createPage() {
+    let begin = ((currentPage - 1) * numberPerPage);
+    let end = begin + numberPerPage;
+
+    pageJobs = dataJobs.slice(begin, end);
+    outputPage();
+}
+
+function outputPage() {
+    items.innerHTML = "";
+    for (let i = 0; i < pageJobs.length; i++) {
+        items.innerHTML += `
+            <div class="jobs-item">
+                <img class="company-logo" src="${dataJobs[i].company_logo}" alt="Company Logo">
+                <p class="company-name">${dataJobs[i].company}</p>
+                <h3 class="job-title">${dataJobs[i].title}</h3>
+                <p class="job-type">${dataJobs[i].type}</p>
+                <p class="job-location">${dataJobs[i].location}</p>
+                <p class="job-time">${dataJobs[i].created_at}</p>
+                <br>
+            </div>
+        `;
     }
 }

@@ -97,7 +97,7 @@ function printJobs() {
 
 document.querySelector('#nextBtn').addEventListener('click', function(){
     currentPage += 1;
-    console.log('Clieckea');
+    console.log("current page:" + currentPage);
     createPage();
 });
 function previousPage() {
@@ -112,16 +112,16 @@ function lastPage() {
 
 
 function createPage() {
-    console.log('entra a create page');
     let begin = ((currentPage - 1) * jobsPerPage);
     let end = begin + jobsPerPage;
+    console.log('begin:'+begin+'  end:'+end)
 
     pageJobs = dataJobs.slice(begin, end);
+    console.log('page jobs:' + pageJobs)
     outputPage();
 }
 
 function outputPage() {
-    console.log('entra a output');
     let pageControl = document.querySelector('.page-control').style.display = "block";
     items.innerHTML = "";
     for (let i = 0; i < pageJobs.length; i++) {

@@ -1,8 +1,7 @@
 let items = document.querySelector('.jobs-list');
 let searchBtn = document.querySelector('#searchBtn');
 let dataJobs;
-let dataJobs2 = new Array();
-let dataJobs3;
+let dataJobsFull = new Array();
 // VARIABLES URL
 let description;
 let city;
@@ -42,26 +41,21 @@ function loadJobs() {
 
     // LA PETICION PASA POR PROXY, PARA EVITAR ERROR CORS
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    for (let i = 0; i < 7; i++){
+    dataJobsFull = new Array();
+    for (let i = 1; i < 7; i++){
         let url = `https://jobs.github.com/positions.json?${description}&${city}&${fullTime}&page=${i}`;
         console.log(url);
         fetch(proxyurl + url)
         .then(response => response.json())
         .then(data => {
+            console.log(data);
+            console.log(data.length);
+            console.log("-----");
             dataJobs = data;
-            console.log(dataJobs);
-            dataJobs3 += (dataJobs2.concat(dataJobs));
-            console.log(dataJobs3);
-    });
-        /*dataJobs2 = data;
-        console.log(dataJobs2);
-        numberOfPages = (Math.ceil(dataJobs2.length / jobsPerPage));
-        createPage();
-        dataJobs3 = (dataJobs.concat(dataJobs2));
-        console.log(dataJobs3);*/
-    };
-
-
+            dataJobsFull = (dataJobsFull.concat(dataJobs));
+        });
+    }
+    createPage();
 };
 
 // FUNCIONES DE BOTONES
@@ -92,6 +86,9 @@ function checkBtn() {
 
 // SE CREAN LAS PAGINAS DE 5 TRABAJOS
 function createPage() {
+    console.log(dataJobsFull);
+    console.log("full  "+dataJobsFull.length);
+
     let begin = ((currentPage - 1) * jobsPerPage);
     let end = begin + jobsPerPage;
 

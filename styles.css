@@ -81,6 +81,7 @@ hr {
     opacity: .5;
 }
 #city {
+    padding-left: 15px;
     margin-top: 5%;
     width: 100%;
     height: 30px;

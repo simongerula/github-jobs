@@ -46,15 +46,16 @@ function loadJobs() {
             `
         } else {
         // Por cada item genero un div
-            for (jobs in data){
+            //for (jobs in data){
+            for (let i=1; i < 6; i++) {
                 items.innerHTML +=`
                 <div class="jobs-item">
-                    <img class="company-logo" src="${data[jobs].company_logo}" alt="Company Logo">
-                    <p class="company-name">${data[jobs].company}</p>
-                    <h3 class="job-title">${data[jobs].title}</h3>
-                    <p class="job-type">${data[jobs].type}</p>
-                    <p class="job-location">${data[jobs].location}</p>
-                    <p class="job-time">${data[jobs].created_at}</p>
+                    <img class="company-logo" src="${data[i].company_logo}" alt="Company Logo">
+                    <p class="company-name">${data[i].company}</p>
+                    <h3 class="job-title">${data[i].title}</h3>
+                    <p class="job-type">${data[i].type}</p>
+                    <p class="job-location">${data[i].location}</p>
+                    <p class="job-time">${data[i].created_at}</p>
                     <br>
                 </div>
                     `;

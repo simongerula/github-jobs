@@ -41,7 +41,6 @@ function loadJobs() {
     // LA PETICION PASA POR PROXY, PARA EVITAR ERROR CORS
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const url = `https://jobs.github.com/positions.json?${description}&${city}&${fullTime}`;
-    console.log(proxyurl + url);
     fetch(proxyurl + url)
     .then(response => response.json())
     .then(data => {

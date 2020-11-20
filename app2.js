@@ -1,5 +1,6 @@
 let items = document.querySelector('.jobs-list');
 let searchBtn = document.querySelector('#searchBtn');
+let dataJobs;
 // VARIABLES URL
 let description;
 let city;
@@ -38,5 +39,8 @@ function loadJobs() {
     console.log(proxyurl + url);
     fetch(proxyurl + url)
     .then(response => response.json())
-    .then(data => console.log(data));
+    .then(data => dataJobs = data);
 };
+
+console.log("Imprime fuera de la funcion")
+console.log(dataJobs)

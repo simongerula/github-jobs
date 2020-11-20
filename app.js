@@ -2,6 +2,7 @@ let items = document.querySelector('.jobs-list');
 let searchBtn = document.querySelector('#searchBtn');
 let dataJobs;
 let dataJobs2 = new Array();
+let dataJobs3;
 // VARIABLES URL
 let description;
 let city;

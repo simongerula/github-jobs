@@ -99,18 +99,19 @@ document.querySelector('#nextBtn').addEventListener('click', function(){
     currentPage += 1;
     createPage();
 });
-function previousPage() {
+document.querySelector('#previousBtn').addEventListener('click', function(){
     currentPage -= 1;
     createPage();
-}
-function firstPage() {
+});
+document.querySelector('#firstBtn').addEventListener('click', function(){
     currentPage = 1;
     createPage();
-}
-function lastPage() {
+});
+document.querySelector('#lastBtn').addEventListener('click', function(){
     currentPage = numberOfPages;
     createPage();
-}
+});
+
 
 
 function createPage() {

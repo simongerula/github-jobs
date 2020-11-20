@@ -39,8 +39,15 @@ function loadJobs() {
     console.log(proxyurl + url);
     fetch(proxyurl + url)
     .then(response => response.json())
-    .then(data => dataJobs = data);
+    .then(data => {
+        console.log(data);
+        dataJobs = data
+        printJobs(),
+    });
+
 };
 
-console.log("Imprime fuera de la funcion")
-console.log(dataJobs)
+function printJobs() {
+    console.log("Imprime fuera de la funcion")
+    console.log(dataJobs)
+}

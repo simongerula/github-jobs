@@ -97,27 +97,28 @@ function printJobs() {
 
 document.querySelector('#nextBtn').addEventListener('click', function(){
     currentPage += 1;
-    console.log("current page:" + currentPage);
     createPage();
 });
 function previousPage() {
     currentPage -= 1;
+    createPage();
 }
 function firstPage() {
     currentPage = 1;
+    createPage();
 }
 function lastPage() {
     currentPage = numberOfPages;
+    createPage();
 }
 
 
 function createPage() {
     let begin = ((currentPage - 1) * jobsPerPage);
     let end = begin + jobsPerPage;
-    console.log('begin:'+begin+'  end:'+end)
 
     pageJobs = dataJobs.slice(begin, end);
-    console.log('page jobs:' + pageJobs)
+    checkBtn();
     outputPage();
 }
 
@@ -137,4 +138,11 @@ function outputPage() {
             </div>
         `;
     }
+}
+
+function checkBtn() {
+    document.querySelector("#nextBtn").disabled = currentPage == numberOfPages ? true : false;
+    document.querySelector("#previousBtn").disabled = currentPage == 1 ? true : false;
+    document.querySelector("#firstBtn").disabled = currentPage == 1 ? true : false;
+    document.querySelector("#lastBtn").disabled = currentPage == numberOfPages ? true : false;
 }

@@ -112,8 +112,8 @@ function lastPage() {
 
 
 function createPage() {
-    let begin = ((currentPage - 1) * numberPerPage);
-    let end = begin + numberPerPage;
+    let begin = ((currentPage - 1) * jobsPerPage);
+    let end = begin + jobsPerPage;
 
     pageJobs = dataJobs.slice(begin, end);
     outputPage();

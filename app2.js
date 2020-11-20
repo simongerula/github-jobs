@@ -48,6 +48,11 @@ function loadJobs() {
 
 // FUNCION ENCARGADA DE IMPRIMIR LOS TRABAJOS
 function printJobs() {
+    let cantidadTrabajos = dataJobs.length;
+    let trabajosPorPagina = 5;
+    let cantidadPaginas = (cantidadTrabajos/trabajosPorPagina);
+    let indexStart = 0;
+    let indexEnd = 5;
     items.innerHTML = "";
     // Si no se encuentran trabajos lanza Notghing found
     if (dataJobs.length == 0) {
@@ -58,15 +63,15 @@ function printJobs() {
     } else {
     // Por cada item genero un div
         //for (jobs in dataJobs){
-        for (let i=0; i < 6; i++) {
+        for (indexStart; indexStart < indexEnd; indexStart++) {
             items.innerHTML +=`
             <div class="jobs-item">
-                <img class="company-logo" src="${dataJobs[i].company_logo}" alt="Company Logo">
-                <p class="company-name">${dataJobs[i].company}</p>
-                <h3 class="job-title">${dataJobs[i].title}</h3>
-                <p class="job-type">${dataJobs[i].type}</p>
-                <p class="job-location">${dataJobs[i].location}</p>
-                <p class="job-time">${dataJobs[i].created_at}</p>
+                <img class="company-logo" src="${dataJobs[indexStart].company_logo}" alt="Company Logo">
+                <p class="company-name">${dataJobs[indexStart].company}</p>
+                <h3 class="job-title">${dataJobs[indexStart].title}</h3>
+                <p class="job-type">${dataJobs[indexStart].type}</p>
+                <p class="job-location">${dataJobs[indexStart].location}</p>
+                <p class="job-time">${dataJobs[indexStart].created_at}</p>
                 <br>
             </div>
                 `;

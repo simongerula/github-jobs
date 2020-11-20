@@ -127,18 +127,25 @@ function createPage() {
 function outputPage() {
     let pageControl = document.querySelector('.page-control').style.display = "block";
     items.innerHTML = "";
-    for (let i = 0; i < pageJobs.length; i++) {
-        items.innerHTML += `
+    if (dataJobs.length == 0) {
+        items.innerHTML +=`
             <div class="jobs-item">
-                <img class="company-logo" src="${pageJobs[i].company_logo}" alt="Company Logo">
-                <p class="company-name">${pageJobs[i].company}</p>
-                <h3 class="job-title">${pageJobs[i].title}</h3>
-                <p class="job-type">${pageJobs[i].type}</p>
-                <p class="job-location">${pageJobs[i].location}</p>
-                <p class="job-time">${pageJobs[i].created_at}</p>
-                <br>
-            </div>
-        `;
+            <h3>Nothing found</h3>
+        `
+    } else {
+        for (let i = 0; i < pageJobs.length; i++) {
+            items.innerHTML += `
+                <div class="jobs-item">
+                    <img class="company-logo" src="${pageJobs[i].company_logo}" alt="Company Logo">
+                    <p class="company-name">${pageJobs[i].company}</p>
+                    <h3 class="job-title">${pageJobs[i].title}</h3>
+                    <p class="job-type">${pageJobs[i].type}</p>
+                    <p class="job-location">${pageJobs[i].location}</p>
+                    <p class="job-time">${pageJobs[i].created_at}</p>
+                    <br>
+                </div>
+            `;
+        }
     }
 }
 

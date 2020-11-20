@@ -40,14 +40,35 @@ function loadJobs() {
     fetch(proxyurl + url)
     .then(response => response.json())
     .then(data => {
-        console.log(data);
         dataJobs = data;
         printJobs();
     });
 
 };
 
+// FUNCION ENCARGADA DE IMPRIMIR LOS TRABAJOS
 function printJobs() {
-    console.log("Imprime fuera de la funcion")
-    console.log(dataJobs)
+    items.innerHTML = "";
+    // Si no se encuentran trabajos lanza Notghing found
+    if (data.length == 0) {
+        items.innerHTML +=`
+            <div class="jobs-item">
+            <h3>Nothing found</h3>
+        `
+    } else {
+    // Por cada item genero un div
+        //for (jobs in data){
+        for (let i=1; i < 6; i++) {
+            items.innerHTML +=`
+            <div class="jobs-item">
+                <img class="company-logo" src="${data[i].company_logo}" alt="Company Logo">
+                <p class="company-name">${data[i].company}</p>
+                <h3 class="job-title">${data[i].title}</h3>
+                <p class="job-type">${data[i].type}</p>
+                <p class="job-location">${data[i].location}</p>
+                <p class="job-time">${data[i].created_at}</p>
+                <br>
+            </div>
+                `;
+        }
 }

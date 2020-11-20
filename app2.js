@@ -95,11 +95,10 @@ function printJobs() {
 
 
 
-document.querySelector('#nextBtn').addEventListener('click', nextPage);
-function nextPage() {
+document.querySelector('#nextBtn').addEventListener('click', function(){
     currentPage += 1;
     createPage();
-}
+});
 function previousPage() {
     currentPage -= 1;
 }

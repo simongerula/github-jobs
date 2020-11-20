@@ -101,12 +101,13 @@ hr {
 .jobs-item {
     background-color: white;
     width: 90%;
-    height: 120px;
+    height: 180px;
     margin: 2% 5%;
     position: relative;
 }
 .company-logo {
-    height: 100%;
+    margin-top: 10%;
+    height: 50%;
     width: 25%;
     position: absolute;
     left: 0;
@@ -124,7 +125,7 @@ hr {
 }
 .job-type {
     position: absolute;
-    bottom: 35%;
+    bottom: 15%;
     left: 30%;
     border: solid 2px  rgb(30, 134, 255);
     border-radius: 5px;
@@ -133,7 +134,7 @@ hr {
 }
 .job-location {
     position: absolute;
-    bottom: 18%;
+    bottom: 2%;
     left: 30%;
 }
 .job-time {
@@ -160,6 +161,11 @@ hr {
     cursor: pointer;
     background-color: rgba(30, 134, 255, 1);
 }
+.control-btn:disabled {
+    cursor: not-allowed;
+    background-color: rgba(30, 134, 255, .4);
+
+}
 
 
 
@@ -172,9 +178,16 @@ hr {
         display: grid;
         grid-template-columns: 1fr 2fr;
     }
+    .jobs-item {
+    background-color: white;
+    width: 90%;
+    height: 120px;
+    margin: 2% 5%;
+    position: relative;
+    }
     .job-type {
         position: absolute;
-        bottom: 15%;
+        bottom: 8%;
         left: 30%;
     }
     .job-location {

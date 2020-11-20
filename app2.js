@@ -127,12 +127,12 @@ function outputPage() {
     for (let i = 0; i < pageJobs.length; i++) {
         items.innerHTML += `
             <div class="jobs-item">
-                <img class="company-logo" src="${dataJobs[i].company_logo}" alt="Company Logo">
-                <p class="company-name">${dataJobs[i].company}</p>
-                <h3 class="job-title">${dataJobs[i].title}</h3>
-                <p class="job-type">${dataJobs[i].type}</p>
-                <p class="job-location">${dataJobs[i].location}</p>
-                <p class="job-time">${dataJobs[i].created_at}</p>
+                <img class="company-logo" src="${pageJobs[i].company_logo}" alt="Company Logo">
+                <p class="company-name">${pageJobs[i].company}</p>
+                <h3 class="job-title">${pageJobs[i].title}</h3>
+                <p class="job-type">${pageJobs[i].type}</p>
+                <p class="job-location">${pageJobs[i].location}</p>
+                <p class="job-time">${pageJobs[i].created_at}</p>
                 <br>
             </div>
         `;

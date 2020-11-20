@@ -39,11 +39,19 @@ body {
     width: 100%;
     border: none;
     border-radius: 5px;
-    padding-left: 3%;
+    padding-left: 12%;
+    padding-right: 35%;
     font-size: 16px;
 }
 #description::placeholder {
     font-size: 12px;
+}
+.job-icon {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    opacity: .6;
 }
 #searchBtn {
     position: absolute;
@@ -83,11 +91,22 @@ hr {
     width: 100%;
     opacity: .5;
 }
-#city {
-    padding-left: 15px;
+.city-icon-position {
+    width: 100%;
     margin-top: 5%;
+    position: relative;
+}
+#city {
+    padding-left: 10%;
     width: 100%;
     height: 30px;
+}
+.location-icon-s {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2%;
+    opacity: .6;
 }
 .location-checkbox {
     margin-top: 5%;
@@ -142,6 +161,7 @@ hr {
     margin-top: 3%;
     width: 75%;
     text-align: center;
+    opacity: .7;
 }
 .job-time {
     position: relative;
@@ -190,7 +210,7 @@ hr {
     .jobs-item {
     background-color: white;
     width: 90%;
-    height: 120px;
+    height: 140px;
     margin: 2% 5%;
     position: relative;
     }

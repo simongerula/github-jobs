@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles.css">
     <!-- GoogleFonts - Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Iconos -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -15,7 +17,8 @@
             <p class="brand"><b>Github</b>  Jobs</p>
             <div class="input-form">
                 <div class="input-position">
-                    <input type="text" name="description" id="description" placeholder="Kewyword">
+                    <i class="job-icon material-icons">work_outline</i>
+                    <input type="text" name="description" id="description" placeholder="Title, companies, expertise or benefits">
                     <button id="searchBtn">Search</button>
                 </div>
             </div>
@@ -27,7 +30,10 @@
                 Full Time</label>
                 <p class="location-label">Location</p>
                 <hr>
-                <input type="text" name="city" id="city" placeholder="City,state,zip code or country">
+                <div class="city-icon-position">
+                    <i class="location-icon-s material-icons">public</i>
+                    <input type="text" name="city" id="city" placeholder="City,state,zip code or country">
+                </div>
                 <div class="location-checkbox">
                     <label class="location-chk-label" for="locationChk">
                         <input type="checkbox" name="locationChk" id="locationChk" value="london">

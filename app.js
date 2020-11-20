@@ -55,10 +55,10 @@ function loadJobs() {
             console.log("-----");
             dataJobs = data;
             dataJobsFull = (dataJobsFull.concat(dataJobs));
-            if (i == 6) {
-                console.log(dataJobsFull);
-                console.log("full  "+dataJobsFull.length);
-            };
+
+            console.log(dataJobsFull);
+            console.log("full  "+dataJobsFull.length);
+
         });
     }
 };

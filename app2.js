@@ -120,6 +120,7 @@ function createPage() {
 }
 
 function outputPage() {
+    let pageControl = document.querySelector('.page-control').style.display = "block";
     items.innerHTML = "";
     for (let i = 0; i < pageJobs.length; i++) {
         items.innerHTML += `

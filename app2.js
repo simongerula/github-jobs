@@ -125,9 +125,10 @@ function createPage() {
 }
 
 function outputPage() {
-    let pageControl = document.querySelector('.page-control').style.display = "block";
+    document.querySelector('.page-control').style.display = "block";
     items.innerHTML = "";
     if (dataJobs.length == 0) {
+        document.querySelector('.page-control').style.display = "none";
         items.innerHTML +=`
             <div class="jobs-item">
             <h3>Nothing found</h3>

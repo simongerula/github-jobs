@@ -97,6 +97,7 @@ function printJobs() {
 
 document.querySelector('#nextBtn').addEventListener('click', function(){
     currentPage += 1;
+    console.log('Clieckea');
     createPage();
 });
 function previousPage() {
@@ -111,6 +112,7 @@ function lastPage() {
 
 
 function createPage() {
+    console.log('entra a create page');
     let begin = ((currentPage - 1) * jobsPerPage);
     let end = begin + jobsPerPage;
 
@@ -119,6 +121,7 @@ function createPage() {
 }
 
 function outputPage() {
+    console.log('entra a output');
     let pageControl = document.querySelector('.page-control').style.display = "block";
     items.innerHTML = "";
     for (let i = 0; i < pageJobs.length; i++) {

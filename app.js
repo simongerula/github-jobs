@@ -2,7 +2,6 @@ let items = document.querySelector('.jobs-list');
 let searchBtn = document.querySelector('#searchBtn');
 let dataJobs;
 let dataJobsFull = new Array();
-let falseTrue = false;
 // VARIABLES URL
 let description;
 let city;
@@ -61,6 +60,7 @@ function loadJobs() {
 
         });
     }
+    console.log('la concha de tu madre');
 };
 
 // FUNCIONES DE BOTONES

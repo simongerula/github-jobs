@@ -71,4 +71,5 @@ function printJobs() {
             </div>
                 `;
         }
+    }
 }

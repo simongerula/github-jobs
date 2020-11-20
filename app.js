@@ -43,6 +43,7 @@ function loadJobs() {
     // LA PETICION PASA POR PROXY, PARA EVITAR ERROR CORS
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     dataJobsFull = new Array();
+    falseTrue = false;
     for (let i = 1; i < 7; i++){
         let url = `https://jobs.github.com/positions.json?${description}&${city}&${fullTime}&page=${i}`;
         console.log(url);
@@ -58,12 +59,10 @@ function loadJobs() {
                 falseTrue = true;
             }
         });
-        if (falseTrue == true) {
-            createPage();
-        }
     }
-
-    
+    if (falseTrue == true) {
+        createPage();
+    }
 };
 
 // FUNCIONES DE BOTONES

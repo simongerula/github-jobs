@@ -61,7 +61,9 @@ function loadJobs() {
         });
     }
 };
-loadJobs.then(createPage);
+
+const promise = loadJobs();
+promise.then(createPage);
 
 // FUNCIONES DE BOTONES
 document.querySelector('#nextBtn').addEventListener('click', function(){

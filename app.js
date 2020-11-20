@@ -60,8 +60,8 @@ function loadJobs() {
 
         });
     }
-    console.log('la concha de tu madre');
 };
+loadJobs.then(createPage);
 
 // FUNCIONES DE BOTONES
 document.querySelector('#nextBtn').addEventListener('click', function(){
@@ -91,6 +91,8 @@ function checkBtn() {
 
 // SE CREAN LAS PAGINAS DE 5 TRABAJOS
 function createPage() {
+
+    console.log('dale forro');
 
     let begin = ((currentPage - 1) * jobsPerPage);
     let end = begin + jobsPerPage;

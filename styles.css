@@ -126,7 +126,7 @@ hr {
 .job-type {
     position: absolute;
     bottom: 15%;
-    right: 1%;
+    right: 3%;
     border: solid 2px  rgb(30, 134, 255);
     border-radius: 5px;
     color: rgb(30, 134, 255);
@@ -188,6 +188,7 @@ hr {
     .job-type {
         position: absolute;
         bottom: 8%;
+        right: auto;
         left: 30%;
     }
     .job-location {

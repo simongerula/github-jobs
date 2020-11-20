@@ -12,7 +12,7 @@ let jobsPerPage = 5;
 let numberOfPages;
 
 searchBtn.addEventListener('click', loadJobs); 
-//document.onload = loadJobs();
+document.onload = loadJobs();
 
 
 // FUNCION QUE CONECTA LA API
@@ -52,50 +52,8 @@ function loadJobs() {
     });
 
 };
-/*
-// FUNCION ENCARGADA DE IMPRIMIR LOS TRABAJOS
-function printJobs() {
-    // VARIABLES CONTROLADORAS DE PAGINA
-    let cantidadTrabajos = dataJobs.length;
-    let trabajosPorPagina = 5;
-    let cantidadPaginas = (cantidadTrabajos/trabajosPorPagina);
-    let indexStart = 0;
-    let indexEnd = 5;
-    let firstBtn = document.querySelector('#firstBtn');
-    let previousBtn = document.querySelector('#previousBtn');
-    let nextBtn = document.querySelector('#nextBtn');
-    let lastBtn = document.querySelector('#lastBtn');
-    let pageControl = document.querySelector('.page-control').style.display = "block";
 
-    items.innerHTML = "";
-    // Si no se encuentran trabajos lanza Notghing found
-    if (dataJobs.length == 0) {
-        items.innerHTML +=`
-            <div class="jobs-item">
-            <h3>Nothing found</h3>
-        `
-    } else {
-    // Por cada item genero un div
-        //for (jobs in dataJobs){
-        for (indexStart; indexStart < indexEnd; indexStart++) {
-            items.innerHTML +=`
-            <div class="jobs-item">
-                <img class="company-logo" src="${dataJobs[indexStart].company_logo}" alt="Company Logo">
-                <p class="company-name">${dataJobs[indexStart].company}</p>
-                <h3 class="job-title">${dataJobs[indexStart].title}</h3>
-                <p class="job-type">${dataJobs[indexStart].type}</p>
-                <p class="job-location">${dataJobs[indexStart].location}</p>
-                <p class="job-time">${dataJobs[indexStart].created_at}</p>
-                <br>
-            </div>
-                `;
-        }
-    }
-}*/
-
-
-
-
+// FUNCIONES DE BOTONES
 document.querySelector('#nextBtn').addEventListener('click', function(){
     currentPage += 1;
     createPage();
@@ -112,9 +70,16 @@ document.querySelector('#lastBtn').addEventListener('click', function(){
     currentPage = numberOfPages;
     createPage();
 });
+// SE CHEQUEA LA PAGINA ACTUAL Y SE DESACTIVAN BOTONES
+function checkBtn() {
+    document.querySelector("#nextBtn").disabled = currentPage == numberOfPages ? true : false;
+    document.querySelector("#previousBtn").disabled = currentPage == 1 ? true : false;
+    document.querySelector("#firstBtn").disabled = currentPage == 1 ? true : false;
+    document.querySelector("#lastBtn").disabled = currentPage == numberOfPages ? true : false;
+}
 
 
-
+// SE CREAN LAS PAGINAS DE 5 TRABAJOS
 function createPage() {
     let begin = ((currentPage - 1) * jobsPerPage);
     let end = begin + jobsPerPage;
@@ -124,6 +89,7 @@ function createPage() {
     outputPage();
 }
 
+// FUNCION QUE MUESTRA LAS PAGINAS DE TRABAJOS
 function outputPage() {
     document.querySelector('.page-control').style.display = "block";
     items.innerHTML = "";
@@ -148,11 +114,4 @@ function outputPage() {
             `;
         }
     }
-}
-
-function checkBtn() {
-    document.querySelector("#nextBtn").disabled = currentPage == numberOfPages ? true : false;
-    document.querySelector("#previousBtn").disabled = currentPage == 1 ? true : false;
-    document.querySelector("#firstBtn").disabled = currentPage == 1 ? true : false;
-    document.querySelector("#lastBtn").disabled = currentPage == numberOfPages ? true : false;
 }

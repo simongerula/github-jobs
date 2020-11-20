@@ -58,7 +58,7 @@ function printJobs() {
     } else {
     // Por cada item genero un div
         //for (jobs in dataJobs){
-        for (let i=1; i < 6; i++) {
+        for (let i=0; i < 6; i++) {
             items.innerHTML +=`
             <div class="jobs-item">
                 <img class="company-logo" src="${dataJobs[i].company_logo}" alt="Company Logo">

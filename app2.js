@@ -48,11 +48,18 @@ function loadJobs() {
 
 // FUNCION ENCARGADA DE IMPRIMIR LOS TRABAJOS
 function printJobs() {
+    // VARIABLES CONTROLADORAS DE PAGINA
     let cantidadTrabajos = dataJobs.length;
     let trabajosPorPagina = 5;
     let cantidadPaginas = (cantidadTrabajos/trabajosPorPagina);
     let indexStart = 0;
     let indexEnd = 5;
+    let firstBtn = document.querySelector('#firstBtn');
+    let previousBtn = document.querySelector('#previousBtn');
+    let nextBtn = document.querySelector('#nextBtn');
+    let lastBtn = document.querySelector('#lastBtn');
+    let pageControl = document.querySelector('.page-control').style.display = "block";
+
     items.innerHTML = "";
     // Si no se encuentran trabajos lanza Notghing found
     if (dataJobs.length == 0) {

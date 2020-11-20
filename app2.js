@@ -50,23 +50,23 @@ function loadJobs() {
 function printJobs() {
     items.innerHTML = "";
     // Si no se encuentran trabajos lanza Notghing found
-    if (data.length == 0) {
+    if (dataJobs.length == 0) {
         items.innerHTML +=`
             <div class="jobs-item">
             <h3>Nothing found</h3>
         `
     } else {
     // Por cada item genero un div
-        //for (jobs in data){
+        //for (jobs in dataJobs){
         for (let i=1; i < 6; i++) {
             items.innerHTML +=`
             <div class="jobs-item">
-                <img class="company-logo" src="${data[i].company_logo}" alt="Company Logo">
-                <p class="company-name">${data[i].company}</p>
-                <h3 class="job-title">${data[i].title}</h3>
-                <p class="job-type">${data[i].type}</p>
-                <p class="job-location">${data[i].location}</p>
-                <p class="job-time">${data[i].created_at}</p>
+                <img class="company-logo" src="${dataJobs[i].company_logo}" alt="Company Logo">
+                <p class="company-name">${dataJobs[i].company}</p>
+                <h3 class="job-title">${dataJobs[i].title}</h3>
+                <p class="job-type">${dataJobs[i].type}</p>
+                <p class="job-location">${dataJobs[i].location}</p>
+                <p class="job-time">${dataJobs[i].created_at}</p>
                 <br>
             </div>
                 `;

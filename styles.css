@@ -187,7 +187,7 @@ hr {
     }
     .job-type {
         position: absolute;
-        bottom: 8%;
+        bottom: 0;
         right: auto;
         left: 30%;
     }

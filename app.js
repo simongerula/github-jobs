@@ -49,7 +49,7 @@ function loadJobs() {
         .then(data => {
             dataJobs = data;
             console.log(dataJobs);
-            dataJobs3 = (dataJobs2.concat(dataJobs));
+            dataJobs3 += (dataJobs2.concat(dataJobs));
             console.log(dataJobs3);
     });
         /*dataJobs2 = data;

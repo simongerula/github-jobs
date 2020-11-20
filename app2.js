@@ -46,7 +46,7 @@ function loadJobs() {
     .then(response => response.json())
     .then(data => {
         dataJobs = data;
-        numberOfPages = (Math.ceil(dataJobs / JobsPerPage));
+        numberOfPages = (Math.ceil(dataJobs / jobsPerPage));
         createPage();
     });
 

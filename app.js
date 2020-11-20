@@ -56,12 +56,10 @@ function loadJobs() {
             dataJobs = data;
             dataJobsFull = (dataJobsFull.concat(dataJobs));
             if (i == 6) {
-                falseTrue = true;
-            }
+                console.log(dataJobsFull);
+                console.log("full  "+dataJobsFull.length);
+            };
         });
-    }
-    if (falseTrue == true) {
-        createPage();
     }
 };
 
@@ -93,8 +91,6 @@ function checkBtn() {
 
 // SE CREAN LAS PAGINAS DE 5 TRABAJOS
 function createPage() {
-    console.log(dataJobsFull);
-    console.log("full  "+dataJobsFull.length);
 
     let begin = ((currentPage - 1) * jobsPerPage);
     let end = begin + jobsPerPage;

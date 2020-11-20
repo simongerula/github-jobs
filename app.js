@@ -2,6 +2,7 @@ let items = document.querySelector('.jobs-list');
 let searchBtn = document.querySelector('#searchBtn');
 let dataJobs;
 let dataJobsFull = new Array();
+let falseTrue = false;
 // VARIABLES URL
 let description;
 let city;
@@ -53,9 +54,16 @@ function loadJobs() {
             console.log("-----");
             dataJobs = data;
             dataJobsFull = (dataJobsFull.concat(dataJobs));
+            if (i == 6) {
+                falseTrue = true;
+            }
         });
+        if (falseTrue == true) {
+            createPage();
+        }
     }
-    createPage();
+
+    
 };
 
 // FUNCIONES DE BOTONES

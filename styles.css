@@ -188,11 +188,11 @@ hr {
     .job-type {
         position: absolute;
         bottom: 8%;
-        left: 30%;
+        right: 1%;
     }
     .job-location {
         position: absolute;
-        bottom: 0;
+        bottom: 5%;
         left: auto;
         right: 22%;
     }

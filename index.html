@@ -22,35 +22,53 @@
         </div>
         <main class="main">
             <div class="left-menu">
-                <label for="fullTimeChk">
+                <label class="full-time-label" for="fullTimeChk">
                     <input type="checkbox" name="fullTimeChk" id="fullTimeChk">
                 Full Time</label>
                 <p class="location-label">Location</p>
                 <hr>
                 <input type="text" name="city" id="city" placeholder="City,state,zip code or country">
                 <div class="location-checkbox">
-                    <label for="locationChk">
+                    <label class="location-chk-label" for="locationChk">
                         <input type="checkbox" name="locationChk" id="locationChk" value="london">
                     London</label>
-                    <label for="locationChk1">
+                    <label class="location-chk-label" for="locationChk1">
                         <input type="checkbox" name="locationChk" id="locationChk1" value="paris">
                     Paris</label>
-                    <label for="locationChk2">
+                    <label class="location-chk-label" for="locationChk2">
                         <input type="checkbox" name="locationChk" id="locationChk2" value="amsterdam">
                     Amsterdam</label>
-                    <label for="locationChk3">
+                    <label class="location-chk-label" for="locationChk3">
                         <input type="checkbox" name="locationChk" id="locationChk3" value="new+york" checked>
                     New York</label>
                 </div>
                 </div>
             <div class="right-side">
                 <div class="jobs-list">
+                    <div class="jobs-item">
+                        <img class="company-logo" src="https://jobs.github.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcnlPIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c4848156a18f7f4b0d3f3f81c7ec6225c8b9af68/Pon_logo.jpg" alt="Company Logo">
+                        <p class="company-name">${pageJobs[i].company}</p>
+                        <h3 class="job-title">${pageJobs[i].title}</h3>
+                        <p class="job-type">${pageJobs[i].type}</p>
+                        <p class="job-location">${pageJobs[i].location}</p>
+                        <p class="job-time">${pageJobs[i].created_at}</p>
+                        <br>
+                    </div>
+                    <div class="jobs-item">
+                        <img class="company-logo" src="https://jobs.github.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcnlPIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c4848156a18f7f4b0d3f3f81c7ec6225c8b9af68/Pon_logo.jpg" alt="Company Logo">
+                        <p class="company-name">${pageJobs[i].company}</p>
+                        <h3 class="job-title">${pageJobs[i].title}</h3>
+                        <p class="job-type">${pageJobs[i].type}</p>
+                        <p class="job-location">${pageJobs[i].location}</p>
+                        <p class="job-time">${pageJobs[i].created_at}</p>
+                        <br>
+                    </div>
                 </div>
                 <div class="page-control">
-                    <input type="button" id="firstBtn" value="first">
-                    <input type="button" id="previousBtn" value="previous">
-                    <input type="button" id="nextBtn" value="next">
-                    <input type="button" id="lastBtn" value="last">
+                    <input type="button" class="control-btn" id="firstBtn" value="First">
+                    <input type="button" class="control-btn" id="previousBtn" value="Previous">
+                    <input type="button" class="control-btn" id="nextBtn" value="Next">
+                    <input type="button" class="control-btn" id="lastBtn" value="Last">
                 </div>
             </div>
         </main>

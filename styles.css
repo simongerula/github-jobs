@@ -50,7 +50,7 @@ body {
     top: 5px;
     right: 5px;
     height: 35px;
-    width: 130px;
+    width: 90px;
     border: none;
     border-radius: 5px;
     color: rgb(255, 255, 255);
@@ -58,19 +58,22 @@ body {
     outline-style: none;
 }
 #searchBtn:hover {
-    border: solid 2px rgba(0, 0, 0, .5);
+    cursor: pointer;
     background-color: rgba(30, 134, 255, 1);
-
 }
 .main {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr;
 }
 .left-menu {
     padding: 5%;
     display: flex;
     flex-direction: column;
     align-items:  start;
+}
+.full-time-label:hover{
+    cursor: pointer;
+    font-weight: bold;
 }
 .location-label {
     margin-top: 5%;
@@ -91,16 +94,9 @@ hr {
     display: flex;
     flex-direction: column;
 }
-#locationChk,
-#locationChk1,
-#locationChk2,
-#locationChk3 {
-    -webkit-appearance: checkbox; /* Chrome, Safari, Opera */
-    -moz-appearance: checkbox;    /* Firefox */
-    -ms-appearance: checkbox;     /* IExplorer */
-    appearance: checkbox;
-}
-.right-side {
+.location-chk-label:hover {
+    cursor: pointer;
+    font-weight: bold;
 }
 .jobs-item {
     background-color: white;
@@ -110,6 +106,74 @@ hr {
     position: relative;
 }
 .company-logo {
+    height: 100%;
+    width: 25%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.company-name {
+    position: absolute;
+    top: 0;
+    left: 30%;
+}
+.job-title {
+    position: absolute;
+    left: 30%;
+    top: 20%;
+}
+.job-type {
+    position: absolute;
+    bottom: 35%;
+    left: 30%;
+}
+.job-location {
+    position: absolute;
+    bottom: 2%;
+    left: 30%;
+}
+.job-time {
+    position: absolute;
+    bottom: 0;
+    right: 1%;
+    font-size: 10px;
+}
+.page-control {
+    display: none;
+    margin-top: 5%;
+    text-align: center;
+}
+.control-btn {
+    height: 30px;
+    width: 70px;
+    border: none;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(30, 134, 255,.8);
+    outline-style: none;
+}
+.control-btn:hover {
+    cursor: pointer;
+    background-color: rgba(30, 134, 255, 1);
+}
+
+
+
+/*MEDIA DESKTOP*/
+@media (min-width:768px){
+    #searchBtn {
+        width: 130px;
+    }
+    .main {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+
+
+
+/*.company-logo {
     height: 100%;
     width: 15%;
     position: absolute;
@@ -141,7 +205,4 @@ hr {
     bottom: 0;
     right: 1%;
     font-size: 10px;
-}
-.page-control {
-    display: none;
-}
+}*/

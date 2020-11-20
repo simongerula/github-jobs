@@ -41,8 +41,8 @@ function loadJobs() {
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        dataJobs = data
-        printJobs(),
+        dataJobs = data;
+        printJobs();
     });
 
 };

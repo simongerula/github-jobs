@@ -45,22 +45,24 @@ function loadJobs() {
     falseTrue = false;
     for (let i = 1; i < 7; i++){
         let url = `https://jobs.github.com/positions.json?${description}&${city}&${fullTime}&page=${i}`;
+    
         console.log(url);
         fetch(proxyurl + url)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
-            console.log(data.length);
-            console.log("-----");
             dataJobs = data;
             dataJobsFull = (dataJobsFull.concat(dataJobs));
 
             console.log(dataJobsFull);
             console.log("full  "+dataJobsFull.length);
-
-        });
+        })
     }
 };
+
+function mostrar() {
+    console.log(dataJobsFull);
+    console.log("funcion full  "+dataJobsFull.length);
+}
 
 // FUNCIONES DE BOTONES
 document.querySelector('#nextBtn').addEventListener('click', function(){

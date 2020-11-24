@@ -42,27 +42,50 @@ function loadJobs() {
     // LA PETICION PASA POR PROXY, PARA EVITAR ERROR CORS
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     dataJobsFull = new Array();
-    falseTrue = false;
-    for (let i = 1; i < 7; i++){
-        let url = `https://jobs.github.com/positions.json?${description}&${city}&${fullTime}&page=${i}`;
-    
-        console.log(url);
+        let url = `https://jobs.github.com/positions.json?${description}&${city}&${fullTime}`;
         fetch(proxyurl + url)
         .then(response => response.json())
         .then(data => {
             dataJobs = data;
             dataJobsFull = (dataJobsFull.concat(dataJobs));
-
-            console.log(dataJobsFull);
-            console.log("full  "+dataJobsFull.length);
         })
-    }
+        .then(
+        fetch(proxyurl + `https://jobs.github.com/positions.json?${description}&${city}&${fullTime}&page=2`)
+        .then(response => response.json())
+        .then(data => {
+                dataJobs = data;
+                console.log(dataJobs);
+                dataJobsFull = (dataJobsFull.concat(dataJobs));
+        }))
+        .then(
+        fetch(proxyurl + `https://jobs.github.com/positions.json?${description}&${city}&${fullTime}&page=3`)
+        .then(response => response.json())
+        .then(data => {
+                dataJobs = data;
+                console.log(dataJobs);
+                dataJobsFull = (dataJobsFull.concat(dataJobs));
+        }))
+        .then(
+        fetch(proxyurl + `https://jobs.github.com/positions.json?${description}&${city}&${fullTime}&page=4`)
+        .then(response => response.json())
+        .then(data => {
+                dataJobs = data;
+                console.log(dataJobs);
+                dataJobsFull = (dataJobsFull.concat(dataJobs));
+        }))
+        .then(
+        fetch(proxyurl + `https://jobs.github.com/positions.json?${description}&${city}&${fullTime}&page=5`)
+        .then(response => response.json())
+        .then(data => {
+                dataJobs = data;
+                console.log(dataJobs);
+                dataJobsFull = (dataJobsFull.concat(dataJobs));
+                console.log(dataJobsFull);
+                console.log("full  "+dataJobsFull.length)
+                numberOfPages = (Math.ceil(dataJobsFull.length / jobsPerPage));
+        }));
 };
 
-function mostrar() {
-    console.log(dataJobsFull);
-    console.log("funcion full  "+dataJobsFull.length);
-}
 
 // FUNCIONES DE BOTONES
 document.querySelector('#nextBtn').addEventListener('click', function(){
@@ -93,12 +116,10 @@ function checkBtn() {
 // SE CREAN LAS PAGINAS DE 5 TRABAJOS
 function createPage() {
 
-    console.log('dale forro');
-
     let begin = ((currentPage - 1) * jobsPerPage);
     let end = begin + jobsPerPage;
 
-    pageJobs = dataJobs.slice(begin, end);
+    pageJobs = dataJobsFull.slice(begin, end);
     checkBtn();
     outputPage();
 }

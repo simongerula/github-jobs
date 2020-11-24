@@ -99,17 +99,29 @@ function outputPage() {
         `
     } else {
         for (let i = 0; i < pageJobs.length; i++) {
+            // CALCULADOR DE FECHA CON METODO MOMENT
+            let d = new Date();
+            let fecha = moment(pageJobs[i].created_at);
+            let actualidad = moment(d);
+            let created_at_calc = (actualidad.diff(fecha, 'hours'));
+            if (created_at_calc > 24) {
+                created_at_calc = (actualidad.diff(fecha, 'days') + ' days ago');
+            } else {
+                created_at_calc = (actualidad.diff(fecha, 'hours') + ' hours ago');
+            }
+
             items.innerHTML += `
                 <div class="jobs-item">
                     <img class="company-logo" src="${pageJobs[i].company_logo}" alt="Company Logo">
                     <p class="company-name">${pageJobs[i].company}</p>
                     <h3 class="job-title">${pageJobs[i].title}</h3>
                     <p class="job-type">${pageJobs[i].type}</p>
-                    <p class="job-location">${pageJobs[i].location}</p>
-                    <p class="job-time">${pageJobs[i].created_at}</p>
+                    <p class="job-location"><i class="location-icon-i material-icons">public</i>${pageJobs[i].location}</p>
+                    <p class="job-time"><i class="location-icon-i material-icons">access_time</i>${created_at_calc}</p>
                     <br>
                 </div>
             `;
+
         }
     }
 }

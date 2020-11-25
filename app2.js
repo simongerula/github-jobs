@@ -125,7 +125,7 @@ function outputPage() {
         }
     }
 }
-
+/*
 let locationChk = document.querySelectorAll('.locationChk');
 for (let i = 0; i < locationChk.length ; i++) {
     locationChk[i].addEventListener('click', function() {
@@ -134,4 +134,4 @@ for (let i = 0; i < locationChk.length ; i++) {
         };
     locationChk[i].checked = true;
     });
-};
+};*/

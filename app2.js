@@ -125,3 +125,13 @@ function outputPage() {
         }
     }
 }
+
+let locationChk = document.querySelectorAll('.locationChk');
+for (let i = 0; i < locationChk.length ; i++) {
+    locationChk[i].addEventListener('click', function() {
+        for (let j = 0; j < locationChk.length; j++) {
+            locationChk[j].checked = false;
+        };
+    locationChk[i].checked = true;
+    });
+};

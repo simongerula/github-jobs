@@ -112,7 +112,7 @@ function outputPage() {
 
             items.innerHTML += `
                 <div class="jobs-item">
-                    <img class="company-logo" src="${pageJobs[i].company_logo}" alt="Company Logo">
+                    <img class="company-logo" src="${pageJobs[i].company_logo}" alt="${pageJobs[i].company} Logo">
                     <p class="company-name">${pageJobs[i].company}</p>
                     <h3 class="job-title">${pageJobs[i].title}</h3>
                     <p class="job-type">${pageJobs[i].type}</p>
